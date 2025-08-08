@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ナレッジベースコレクション
+    match /knowledge_base/{document} {
+      // Phase 1: パブリックアクセス（認証なし）
+      allow read, write: if true;
+
+      // Phase 2: 認証ユーザーのみアクセス可能（将来実装）
+      // allow read, write: if request.auth != null;
+    }
+
+    // チャット履歴コレクション
+    match /chat_history/{document} {
+      // Phase 1: パブリックアクセス（認証なし）
+      allow read, write: if true;
+
+      // Phase 2: 認証ユーザーのみアクセス可能（将来実装）
+      // allow read, write: if request.auth != null;
+    }
+  }
+}

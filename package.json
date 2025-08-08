@@ -1,0 +1,33 @@
+{
+  "name": "talk-to-the-boss",
+  "version": "1.0.0",
+  "description": "RAG-based knowledge sharing chatbot for internal use",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "npm run build:frontend && npm run build:functions",
+    "build:frontend": "cd frontend && npm run build",
+    "build:functions": "cd functions && npm run build",
+    "deploy": "npm run build && firebase deploy",
+    "install:all": "npm run install:frontend && npm run install:functions",
+    "install:frontend": "cd frontend && npm install",
+    "install:functions": "cd functions && npm install"
+  },
+  "keywords": [
+    "RAG",
+    "chatbot",
+    "knowledge-sharing",
+    "firebase",
+    "nextjs",
+    "gemini",
+    "vertex-ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "frontend",
+    "functions"
+  ]
+}
