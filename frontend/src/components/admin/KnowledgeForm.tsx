@@ -96,9 +96,9 @@ export default function KnowledgeForm({
     <Dialog
       open={open}
       onClose={handleClose}
-      maxWidth="md"
+      maxWidth="lg"
       fullWidth
-      sx={{ "& .MuiDialog-paper": { height: "80vh" } }}
+      sx={{ "& .MuiDialog-paper": { height: "90vh" } }}
     >
       <DialogTitle>
         {isEdit ? "ナレッジを編集" : "新しいナレッジを作成"}
@@ -142,20 +142,15 @@ export default function KnowledgeForm({
                   fullWidth
                   label="内容"
                   multiline
+                  minRows={20}
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   disabled={isSubmitting}
                   placeholder="詳細な説明を記入してください。Markdown記法が使用できます。"
                   helperText="Markdown記法（**太字**、*斜体*、リストなど）が使用できます"
                   sx={{
-                    "& .MuiInputBase-root": {
-                      height: "100%",
-                      alignItems: "flex-start",
-                    },
-                    "& .MuiInputBase-input": {
-                      height: "100% !important",
-                      overflowY: "auto !important",
-                    },
+                    "& .MuiInputBase-root": { alignItems: "flex-start" },
+                    "& textarea": { resize: "vertical" },
                   }}
                 />
               ) : (
